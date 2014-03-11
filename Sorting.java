@@ -95,17 +95,19 @@ class Sorting {
 	//Selection
 	public static ArrayList<Integer> selectionSort(ArrayList<Integer> a){
 		int min;
+		int s = 0;
 		int temp;
 		for (int i=0; i<size(a); i++) {
 			min = a.get(i);
 			for (int j=i+1; j<size(a); j++) {
 				if (min>a.get(j)) {
 					min=a.get(j);
+					s=j;
 				}
 			}
 			temp = a.get(i);
 			a.set(i,min);
-			
+			a.set(s,temp);
 		}
 		return a;
 	}
